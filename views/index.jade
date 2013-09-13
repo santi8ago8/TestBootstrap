@@ -1,0 +1,16 @@
+extends layout
+
+block content
+        .row-fluid
+            .span12(style='background:')
+                .navbar
+                    .navbar-inner(ng-controller='navController')
+                        a.brand(href='#/') SantiagoPage
+                        ul.nav
+                            li.active
+                                a(href='#/',ng-click='select()') Home
+                            li
+                                a(href='#/form',ng-click='select()') link1
+                            li
+                                a link2
+        .row-fluid(ng-view)
