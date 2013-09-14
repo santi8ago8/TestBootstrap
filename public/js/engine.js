@@ -8,23 +8,24 @@
 
 var SantiagoApp = angular.module('SantiagoApp', []);
 
-SantiagoApp.config(function ($locationProvider,$routeProvider) {
+SantiagoApp.config(function ($locationProvider, $routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/jade/home'
         })
-        .when('/form',{
+        .when('/form', {
             templateUrl: '/jade/form'
         })
         .otherwise({redirectTo: '/'})
 });
 
-var controllersSantiagoApp={};
+var controllersSantiagoApp = {};
 
-controllersSantiagoApp.navController=function($scope){
-    $scope.select=function(ar){
-        console.log($scope);
-
+controllersSantiagoApp.navController = function ($scope) {
+    $scope.select = function () {
+        var select=$(event.target);
+        $('.nav li').removeClass('active');
+        select.parent().addClass('active');
     }
 };
 
